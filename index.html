@@ -16,15 +16,22 @@
         div.page{
             height: 100vh; /*sets the height to match the visible area, and not a set display size vh=view */
             display: grid;
-            grid-template-columns: 200px 3fr;
-            grid-template-rows: 20px 10fr 20px;
-            grid-template-areas: 'menu header'
-                                 'menu mainContent'
-                                 'footer footer'; /*makes the display of elements follow the grid stated in the colums*/
+            grid-template-columns: 3fr 7fr 3fr;
+            grid-template-rows: 10% 4% 1fr 2%;
+            grid-template-areas: 'leftHeader header rightHeader'
+                                 'leftHeader menu rightHeader'
+                                 'leftFill mainContent rightFill'
+                                 'footer footer footer'; /*makes the display of elements follow the grid stated in the colums*/
         }
         div.header{
             background-color: blue;
             grid-area: header;
+        }
+        #leftHeader{
+            grid-area: leftHeader;
+        }
+        #rightHeader{
+            grid-area: rightHeader;
         }
 
         div.menu{
@@ -35,6 +42,14 @@
         div.mainContent{
             background-color: crimson;
             grid-area: mainContent;
+        }
+            
+        #leftFill{
+            grid-area: leftFill;
+        }
+        
+        #rightFill{
+            grid-area: rightFill;
         }
 
         div.footer{
@@ -83,6 +98,8 @@
 <body>
     <div class="page">
         <div class="header">Header</div>
+        <div id="leftHeader">Left Header</div>
+        <div id="rightHeader">Right Header</div>
         <div class="menu">Menu</div>
         <div class="mainContent"> Snømann!
             <div class="top">
@@ -116,6 +133,8 @@
             </div>
 
         </div>
+        <div id="leftFill">Left Fill</div>
+        <div id="rightFill">Right Fill</div>
         <div class ="footer">Footer</div>
     </div>
 </body>
